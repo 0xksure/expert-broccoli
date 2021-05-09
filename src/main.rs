@@ -2,6 +2,9 @@
 
 #[macro_use]
 extern crate rocket;
+use rocket::{get, route};
+#[macro_use]
+extern crate magic;
 use rand;
 
 #[get("/random")]
@@ -10,6 +13,12 @@ fn random_number() -> String {
     format!("{{ 'random_n umber': {}' }}", random_number)
 }
 
+#[get_("/ok")]
+fn try_this() -> String {
+    "wOw".to_string()
+}
+
 fn main() {
+    try_this();
     rocket::ignite().mount("/", routes![random_number]).launch();
 }

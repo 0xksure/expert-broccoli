@@ -4,6 +4,8 @@ version = "0.1.0"
 authors = ["kristohberg"]
 edition = "2018"
 
+
 [dependencies]
 rand = "0.8.3"
 rocket = "0.4.7"
+magic = {path = "magic"}
